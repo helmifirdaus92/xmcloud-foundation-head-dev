@@ -73,16 +73,17 @@
       <Link>bin\%(Filename)%(Extension)</Link>
     </Content>
     <Content Include="binaries\Sitecore.ContentSearch.Azure.dll" />
-    <Content Include="binaries\Sitecore.ContentSearch.Azure.pdb" />
     <Content Include="binaries\Sitecore.ContentSearch.Azure.dll.config" />
     <None Include="Platform.wpp.targets" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="README.md" />
-	<None Include="web.config" >
-		<CopyToOutputDirectory>Always</CopyToOutputDirectory>  
-	</None>
+    <None Include="web.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
