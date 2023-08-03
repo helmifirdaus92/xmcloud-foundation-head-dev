@@ -65,12 +65,22 @@
     <PackageReference Include="Sitecore.Assemblies.SitecoreHeadlessServicesServer" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\**" />
-    <Content Include="bin\**" />
+    <Content Include="App_Config\**">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="binaries\**">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Link>bin\%(Filename)%(Extension)</Link>
+    </Content>
+    <Content Include="binaries\Sitecore.ContentSearch.Azure.dll" />
+    <Content Include="binaries\Sitecore.ContentSearch.Azure.pdb" />
+    <Content Include="binaries\Sitecore.ContentSearch.Azure.dll.config" />
     <None Include="Platform.wpp.targets" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="README.md" />
-    <None Include="web.config" />
+	<None Include="web.config" >
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>  
+	</None>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
